@@ -1,0 +1,44 @@
+Task-01:
+SELECT DISTINCT multiplier FROM users ORDER BY multiplier DESC;
+
+Task-02:
+SELECT id, influence_count FROM users ORDER BY influence_count;
+
+Task-03:
+SELECT DISTINCT member_since FROM users ORDER BY member_since;
+
+Task-04:
+SELECT name, email, member_since FROM users WHERE member_since = '2020-07-01';
+
+Task-05:
+SELECT name, email, member_since FROM users WHERE member_since < '2020-07-01';
+
+Task-06:
+SELECT name, email, member_since FROM users WHERE member_since BETWEEN '2020-07-31' AND '2020-08-15';
+
+Task-07:
+SELECT name, email, member_since FROM users WHERE influence_count >= 750000;
+
+Task-08:
+SELECT name, email, member_since FROM users WHERE member since BETWEEN '2020-07-31' AND '2020-08-15' AND influence_count > 750000;
+
+Task-09:
+SELECT id, email FROM users WHERE email LIKE '%com';
+
+Task-10:
+SELECT id, name FROM users WHERE email LIKE '%djangoproject%';
+
+Task-11:
+SELECT name, email FROM users ORDER BY member_since DESC WHERE LIMIT 5;
+
+Task-12:
+SELECT COUNT (*) AS _users FROM users;
+
+Task-13:
+SELECT COUNT(DISTINCT(multiplier)) FROM users;
+
+Task-14:
+SELECT multiplier, COUNT (*) FROM users WHERE MONTH(member_since) > 4 GROUP BY multiplier;
+
+Task-15:
+SELECT name FROM users WHERE (multiplier%2)=0 AND influence_count >= 700000 ORDER BY name DESC;

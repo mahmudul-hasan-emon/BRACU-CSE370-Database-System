@@ -1,0 +1,136 @@
+Task-01-
+
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.4.14-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+5 rows in set (0.158 sec)
+
+MariaDB [(none)]> create database CSE370;
+Query OK, 1 row affected (0.077 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cse370             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> use CSE370;
+Database changed
+MariaDB [CSE370]>
+
+
+
+Task-02---
+
+MariaDB [CSE370]> show tables;
+Empty set (0.065 sec)
+
+MariaDB [CSE370]> create table Lab_grades(
+    -> student_id char(4),
+    -> name varchar(30),
+    -> major char(3),
+    -> section char(1),
+    -> days_present int,
+    -> project_marks double,
+    -> cgpa decimal(3,2),
+    -> submission_date date
+    -> );
+Query OK, 0 rows affected (0.487 sec)
+
+MariaDB [CSE370]> show tables;
++------------------+
+| Tables_in_cse370 |
++------------------+
+| lab_grades       |
++------------------+
+1 row in set (0.051 sec)
+
+MariaDB [CSE370]> describe Lab_grades;
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| student_id      | char(4)      | YES  |     | NULL    |       |
+| name            | varchar(30)  | YES  |     | NULL    |       |
+| major           | char(3)      | YES  |     | NULL    |       |
+| section         | char(1)      | YES  |     | NULL    |       |
+| days_present    | int(11)      | YES  |     | NULL    |       |
+| project_marks   | double       | YES  |     | NULL    |       |
+| cgpa            | decimal(3,2) | YES  |     | NULL    |       |
+| submission_date | date         | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+
+8 rows in set (0.227 sec)
+
+MariaDB [CSE370]>
+
+
+
+Task-03---
+
+MariaDB [CSE370]> insert into Lab_grades values ('s001','Abir','CS','1',10,18.5,3.91,'2018-09-15');
+Query OK, 1 row affected (0.387 sec)
+
+MariaDB [CSE370]> insert into Lab_grades values ('s019','Naima','CSE','2',12,20,3.7,'2018-08-14');
+Query OK, 1 row affected (0.090 sec)
+
+MariaDB [CSE370]> insert into Lab_grades values ('s002','Nafis','CSE','1',12,20,3.86,'2018-08-15');
+Query OK, 1 row affected (0.074 sec)
+
+MariaDB [CSE370]> insert into Lab_grades values ('s003','Tasneem','CS','1',8,18,3.57,'2018-09-18');
+Query OK, 1 row affected (0.083 sec)
+
+MariaDB [CSE370]> insert into Lab_grades values ('s004','Nahid','ECE','2',7,16.5,3.25,'2018-08-20');
+Query OK, 1 row affected (0.077 sec)
+
+MariaDB [CSE370]> insert into Lab_grades values ('s005','Arafat','CS','2',11,20,4.0,'2018-09-13');
+Query OK, 1 row affected (0.045 sec)
+
+MariaDB [CSE370]> insert into Lab_grades values ('s006','Tasneem','CSE','1',12,17.5,3.7,'2018-08-15');
+Query OK, 1 row affected (0.074 sec)
+
+MariaDB [CSE370]> insert into Lab_grades values ('s007','Muhtadi','ECE','1',10,19,3.67,'2018-09-16');
+Query OK, 1 row affected (0.083 sec)
+
+MariaDB [CSE370]> insert into Lab_grades values ('s008','Farhana','CSE','2',6,15,2.67,'2018-08-16');
+Query OK, 1 row affected (0.078 sec)
+
+MariaDB [CSE370]> select * from Lab_grades;
++------------+---------+-------+---------+--------------+---------------+------+-----------------+
+| student_id | name    | major | section | days_present | project_marks | cgpa | submission_date |
++------------+---------+-------+---------+--------------+---------------+------+-----------------+
+| s001       | Abir    | CS    | 1       |           10 |          18.5 | 3.91 | 2018-09-15      |
+| s019       | Naima   | CSE   | 2       |           12 |            20 | 3.70 | 2018-08-14      |
+| s002       | Nafis   | CSE   | 1       |           12 |            20 | 3.86 | 2018-08-15      |
+| s003       | Tasneem | CS    | 1       |            8 |            18 | 3.57 | 2018-09-18      |
+| s004       | Nahid   | ECE   | 2       |            7 |          16.5 | 3.25 | 2018-08-20      |
+| s005       | Arafat  | CS    | 2       |           11 |            20 | 4.00 | 2018-09-13      |
+| s006       | Tasneem | CSE   | 1       |           12 |          17.5 | 3.70 | 2018-08-15      |
+| s007       | Muhtadi | ECE   | 1       |           10 |            19 | 3.67 | 2018-09-16      |
+| s008       | Farhana | CSE   | 2       |            6 |            15 | 2.67 | 2018-08-16      |
++------------+---------+-------+---------+--------------+---------------+------+-----------------+
+9 rows in set (0.059 sec)
+
+MariaDB [CSE370]>

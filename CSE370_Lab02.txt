@@ -1,0 +1,14 @@
+Task01 Query:
+ALTER TABLE <users> CHANGE <member_id> <id> <int>;
+
+Task02 Query:
+SELECT id, name, email, member_since FROM users;
+
+Task03 Query:
+SELECT name, email FROM users;
+
+Task04 Query:
+SELECT name, email, member_since, (1 - (multiplier * influence_count / 20000000)) FROM users;
+
+Task05 Query:
+SELECT name, email, member_since, (1 - (multiplier * influence_count / 20000000))  AS ranking FROM users;

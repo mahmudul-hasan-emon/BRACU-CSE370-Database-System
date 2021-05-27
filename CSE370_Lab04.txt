@@ -1,0 +1,29 @@
+01==>
+SELECT employee_id, last_name, email, salary, department_id FROM employees WHERE (salary, department_id) IN (SELECT MAX(salary), department_id FROM employees GROUP BY department_id;
+
+02==>
+SELECT employee_id, last_name, email, commission_pct, department_id FROM employees WHERE (commission_id, department_id) IN (SELECT MAX(commission_id), department_id FROM employees GROUP BY department_id);
+
+03==>
+SELECT employee_id, last_name, email, commission_pct, department_id FROM employees WHERE (commission_id, department_id) IN (SELECT MIN(commission_id), department_id FROM employees GROUP BY department_id);
+
+04==>
+SELECT employee_id, last_name, email, commission_pct FROM employees WHERE department_id = 5 AND commission_pct > ANY (SELECT commission_pct FROM employees WHERE department_id = 7);
+
+05==>
+SELECT employee_id, last_name, email, salary FROM employees WHERE department_id = 5 AND salary > ANY (SELECT salary FROM employees WHERE department_id = 7);
+
+06==>
+SELECT department_id, job_id, salary FROM employees GROUP BY department_id HAVING salary < ANY (SELECT MAX(salary) FROM employees GROUP BY department_id); 
+
+07==>
+SELECT DISTINCT manager_id FROM employees E1 WHERE EXISTS (SELECT * FROM employees E2 WHERE E2.manager_id = E1.manager_id AND E2.salary < 2500);
+
+08==>
+SELECT DISTINCT manager_id FROM employees E1 WHERE EXISTS (SELECT * FROM employees E2 WHERE E2.manager_id = E1.manager_id AND E2.commission_pct < 18.25);
+
+09==>
+SELECT DISTINCT manager_id FROM employees E1 WHERE NOT EXISTS (SELECT * FROM employees E2 WHERE E2.manager_id != E1.manager_id AND E2.salary < 3500);
+
+10==>
+SELECT DISTINCT manager_id FROM employees E1 WHERE NOT EXISTS (SELECT * FROM employees E2 WHERE E2.manager_id != E1.manager_id AND E2.commission_pct < 45.05);
