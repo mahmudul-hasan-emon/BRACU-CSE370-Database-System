@@ -1,2 +1,2 @@
 # CSE370-Database-System
-Labs
+Databas System-Labs
