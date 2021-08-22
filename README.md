@@ -1,4 +1,3 @@
-#jddk
 CSE370-Database-System [CSE,BRACU]
 
 Semester: Fall-2020
