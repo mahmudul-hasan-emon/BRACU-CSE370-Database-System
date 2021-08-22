@@ -1,11 +1,12 @@
-# This is CSE370-Database-System Lab.
+#CSE370-Database-System [CSE,BRACU]
+
 Semester: Fall-2020
 
-Theory Faculty: Hossain Arif |
-Lab Faculty: Faisal Bin Ashraf, and Tanvir Rahman.
+Theory Faculty: Hossain Arif [HOS]
 
-Here I have provided my week wise lab task questions and soultions.
-Moreover, I have given the link of my project demonstration video along with source code.
+Lab Faculty: Faisal Bin Ashraf [FBA] & Tanvir Rahman [TNR]
+
+
 
 
 
