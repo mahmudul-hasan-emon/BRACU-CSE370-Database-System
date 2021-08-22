@@ -1,4 +1,4 @@
-#CSE370-Database-System [CSE,BRACU]
+CSE370-Database-System [CSE,BRACU]
 
 Semester: Fall-2020
 
